@@ -29,10 +29,10 @@ const ClothingItem = ({ type, image, dressed, dressDoll, removeItem }) => {
     onClick={handleClick}
     style={{
       cursor: 'pointer',
-      width: '100px',      // Set container width
-      height: '100px',     // Set container height
+      width: '50px',      // Set container width
+      height: '50px',     // Set container height
       overflow: 'hidden',  // Hide anything outside the container
-      margin: '10px',
+      margin: '0px',
       border: '1px solid black', // Optional: visual boundary
       background: 'white',
       borderRadius: '15px',
@@ -53,7 +53,7 @@ const ClothingItem = ({ type, image, dressed, dressDoll, removeItem }) => {
     />
    
   </div>
-   <h2>{image}</h2>
+   <h2 style={{fontSize:'10px'}}>{image}</h2>
   </>
   );
 };

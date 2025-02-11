@@ -3,39 +3,42 @@ import { useDrop } from 'react-dnd';
 
 const Doll = ({ dressed, dressDoll, removeItem }) => {
 
-  // Configure the drop target using useDrop
-  const [{ isOver }, dropRef] = useDrop({
-    accept: 'CLOTHING', // Items of type "CLOTHING" can be dropped here
-    drop: (item) => {
-      // When an item is dropped, update the state
-      setDressed(prev => ({
-        ...prev,
-        [item.type]: item.image,  // Overwrite if an item of the same type already exists
-      }));
-    },
-    collect: (monitor) => ({
-      isOver: !!monitor.isOver(),
-    }),
-  });
+ 
 
+  const images = ['retro yellow purple.svg', 'polka red white.svg', 'polka blue green.svg', 'sky hills.svg', 'summoner.svg'];
+  const [index, setIndex] = useState(0);
+
+  const advanceImage = () => {
+    setIndex((index + 1) % images.length);
+  };
+  const goBackImage = () => {
+    setIndex((index - 1 + images.length) % images.length);
+  };
 
   return (
+    <>
     <div
-      ref={dropRef}
+
       className="doll-container"
       style={{
-        border: isOver ? '2px solid green' : '2px solid gray',
+        
         width: '300px',
         height: '500px',
         position: 'relative',
         margin: '0 auto',
       }}
+      
     >
+      
       {/* Doll base image */}
+      <img 
+        src={`/bg/${images[index]}`}  // Place your doll base image in the public/images folder
+        style={{ width: '100%', height: '100%', position: 'absolute' , left: -15}}
+      />
       <img
         src="/images/character.svg"  // Place your doll base image in the public/images folder
         alt="Doll Base"
-        style={{ width: '100%', height: '100%' }}
+        style={{ width: '100%', height: '100%' , position: 'absolute',}}
       />
       
       {/* Render each dropped clothing item as an absolutely positioned image */}
@@ -55,10 +58,16 @@ const Doll = ({ dressed, dressDoll, removeItem }) => {
             // Make sure pointer events are active so the click registers:
             pointerEvents: 'auto',
           }}
-          title={`Click to remove ${type}`}
         />
       ))}
     </div>
+    <div style={{display: 'flex', justifyContent: 'center', flexDirection: 'row'}}>
+      <button onClick={goBackImage}>Back</button>
+      <button onClick={advanceImage}>Next</button>
+      
+    </div>
+    </>
+
   );
 };
 
