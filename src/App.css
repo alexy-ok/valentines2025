@@ -42,32 +42,87 @@
   color: #888;
 }
 
-.App{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  gap: 2rem;
+/* Overall app container */
+.App {
   text-align: center;
+  padding: 20px;
+  width: 100%;
 }
 
+/* Retro window container */
+.retro-window {
+  width: 800px;              /* Set your desired width */
+  margin: 0 auto;
+  background-color: #c0c0c0;   /* Classic gray */
+  border: 2px solid #808080;
+  box-shadow: inset -2px -2px #fff, 
+              inset 2px 2px #000, 
+              inset -1px -1px #dfdfdf, 
+              inset 1px 1px #404040;
+  font-family: 'MS Sans Serif', Tahoma, sans-serif;
+  border-radius: 10px;
+}
+
+/* Title bar mimicking a Windows 95/98 title bar */
+.title-bar {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(to right, #000080, #0000CD); /* Dark blue gradient */
+  color: white;
+  padding: 4px;
+  font-size: 14px;
+  border-bottom: 2px solid #808080;
+}
+
+/* Optional: Window icon in the title bar */
+.window-icon {
+  width: 16px;
+  height: 16px;
+  background: url('icon.png') no-repeat center center; /* Replace with your icon path */
+  margin-right: 5px;
+}
+
+/* Title text */
+.window-title {
+  flex: 1;
+  text-align: left;
+}
+
+/* Window control buttons (minimize, maximize, close) */
+.window-controls button {
+  background-color: #c0c0c0;
+  border: 1px solid #808080;
+  width: 16px;
+  height: 16px;
+  margin-left: 2px;
+  font-size: 12px;
+  padding: 0;
+  line-height: 14px;
+  cursor: pointer;
+}
+
+/* Content area inside the retro window */
+.window-content {
+  padding: 10px;
+}
+
+/* Styling for the game container if needed */
 .game-container {
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: center;
-  gap: 2rem;
-  width: 40vw;
-  height: 100vh;
-  transform: scale(1.5);  
+  gap: 0px;
+  height: auto;
 }
 
-.clothing-items-container{
+/* Optional: You can further style the clothing items container */
+.clothing-items-container {
   flex: 1;
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-} 
+}
+
+/* And style the individual clothing items sections */
+.clothing-items {
+  margin: 0 10px;
+}

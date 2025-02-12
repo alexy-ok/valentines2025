@@ -35,7 +35,8 @@ const ClothingItem = ({ type, image, dressed, dressDoll, removeItem }) => {
       margin: '0px',
       border: '1px solid black', // Optional: visual boundary
       background: 'white',
-      borderRadius: '15px',
+      borderRadius: '5px',
+      boxShadow: "inset -2px -2px #fff, inset 2px 2px #000, inset -1px -1px #dfdfdf, inset 1px 1px #404040",
     }}
   >
     <img
