@@ -61,9 +61,9 @@ const Doll = ({ dressed, dressDoll, removeItem }) => {
         />
       ))}
     </div>
-    <div style={{display: 'flex', justifyContent: 'center', flexDirection: 'row'}}>
-      <button onClick={goBackImage}>Back</button>
-      <button onClick={advanceImage}>Next</button>
+    <div style={{ display: 'flex', justifyContent: 'center', flexDirection: 'row', gap:'5px'}}>
+      <button onClick={goBackImage} style={{color:'white'}}>{'<'}</button>
+      <button onClick={advanceImage} style={{color:'white'}}>{'>'}</button>
       
     </div>
     </>

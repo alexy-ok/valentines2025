@@ -27,22 +27,30 @@ const App = () => {
 
     <DndProvider backend={HTML5Backend}>
       <div className="App" style={{ textAlign: 'center', padding: '20px', width:'100%' }}>
-        <h1 style={{color:'black'}}>The Game</h1>
-        <div className="game-container" style={{display:'flex', flexDirection: 'row', justifyContent: 'center', backgroundColor:'black', gap:'0px'}}>
+      <h1 style={{color:'black'}}>The Game</h1>
+        <div className="game-container" style={{
+          display:'flex', 
+          flexDirection: 'row', 
+          justifyContent: 'center', 
+          backgroundColor:'#c0c0c0',
+          fontFamily: "'MS Sans Serif', Tahoma, sans-serif", 
+          gap:'0px', height: 'auto', 
+          borderRadius:'5%',
+          padding: '10px',
+          boxShadow: 'inset -2px -2px #fff, inset 2px 2px #000, inset -1px -1px #dfdfdf, inset 1px 1px #404040',
+          border: '2px solid #808080',
+
+          }}>
           {/* Doll Drop Target */}
           <div style={{flex:"1", width:'100%'}}>
             <Doll dressed={dressed} dressDoll={dressDoll} />
           </div>
           {/* Clothing Items */}
           <div className="clothing-items-container" style={{flex: '1', display: 'flex', flexDirection: 'row'}}>
-            <div className="clothing-items" >
-                <h2 style={{}}>Hair</h2>
+             <div className="clothing-items" >
+              <h2 style={{}}>Hair</h2>
             
-                <ClothingItem type="hair" image="short bangs" dressed={dressed} dressDoll={dressDoll} removeItem={removeItem} />
-
-              
-              </div>
-              <div className="clothing-items" >
+              <ClothingItem type="hair" image="short bangs" dressed={dressed} dressDoll={dressDoll} removeItem={removeItem} />  
                 <h2 style={{}}>Acc.</h2>
                 <ClothingItem type="eye" image="glasses" dressed={dressed} dressDoll={dressDoll} removeItem={removeItem} />
                 <ClothingItem type="earring" image="miffy earring" dressed={dressed} dressDoll={dressDoll} removeItem={removeItem} />
@@ -54,6 +62,9 @@ const App = () => {
               <div className="clothing-items" >
                 <h2>Tops</h2>
                 <ClothingItem type="out" image="UCI" dressed={dressed} dressDoll={dressDoll} removeItem={removeItem} />
+                <ClothingItem type="out" image="h and m" dressed={dressed} dressDoll={dressDoll} removeItem={removeItem} />
+                <ClothingItem type="out" image="zipup" dressed={dressed} dressDoll={dressDoll} removeItem={removeItem} />
+                <ClothingItem type="toptop" image="white button" dressed={dressed} dressDoll={dressDoll} removeItem={removeItem} />
                 <ClothingItem type="top" image="green top" dressed={dressed} dressDoll={dressDoll} removeItem={removeItem} />
                 <ClothingItem type="top" image="white top" dressed={dressed} dressDoll={dressDoll} removeItem={removeItem} />
                 <ClothingItem type="shirt" image="tyler shirt" dressed={dressed} dressDoll={dressDoll} removeItem={removeItem} />
@@ -69,12 +80,9 @@ const App = () => {
                 <ClothingItem type="bottom" image="long skirt" dressed={dressed} dressDoll={dressDoll} removeItem={removeItem} />
                 <ClothingItem type="bottom" image="long white skirt" dressed={dressed} dressDoll={dressDoll} removeItem={removeItem} />
 
-              
-              </div>
-              <div className="clothing-items" >
                 <h2>Shoes</h2>
                 <ClothingItem type="shoes" image="Converse" dressed={dressed} dressDoll={dressDoll} removeItem={removeItem} />    
-                <ClothingItem type="shoes" image="white converse" dressed={dressed} dressDoll={dressDoll} removeItem={removeItem} />            
+                <ClothingItem type="shoes" image="white shoes" dressed={dressed} dressDoll={dressDoll} removeItem={removeItem} />            
               </div>
           </div>
         </div>

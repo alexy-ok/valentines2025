@@ -53,7 +53,7 @@ const ClothingItem = ({ type, image, dressed, dressDoll, removeItem }) => {
     />
    
   </div>
-   <h2 style={{fontSize:'10px'}}>{image}</h2>
+   <h2 style={{fontSize:'10px',  fontFamily: "'MS Sans Serif', Tahoma, sans-serif"}}>{image}</h2>
   </>
   );
 };
